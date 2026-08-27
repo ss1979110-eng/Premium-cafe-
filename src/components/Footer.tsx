@@ -24,16 +24,16 @@ export const Footer: React.FC = () => {
       {/* Subtle top glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-[#123F2E] to-transparent" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-12 border-b border-[#241510]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-8 border-b border-[#241510]">
           {/* Col 1: Brand / Concept */}
-          <div className="lg:col-span-5 space-y-4">
+          <div className="lg:col-span-5 space-y-3">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-[#241510] border border-[#0B3024] flex items-center justify-center text-[#E8D8C3]">
                 <Coffee className="w-5 h-5" />
               </div>
               <span className="font-heading text-2xl font-bold tracking-wider text-[#F5F2EC]">
-                CAFÉ JAIPUR
+                COFFEE N CUE
               </span>
             </div>
 
@@ -42,10 +42,10 @@ export const Footer: React.FC = () => {
             </p>
 
             <p className="text-xs text-[#A89A8C] leading-relaxed max-w-sm">
-              An interactive café experience celebrating authentic spiced chai, artisanal coffees, sizzling Indo-Chinese dishes, luscious shakes, and refreshing mocktails.
+              An interactive café experience celebrating authentic spiced chai, artisanal coffees, sizzling Indo-Chinese dishes, luscious shakes, and refreshing mocktails in Jaipur.
             </p>
 
-            <div className="pt-2">
+            <div className="pt-1">
               <a
                 href={`https://wa.me/91${BUSINESS_INFO.phoneRaw}?text=${encodeURIComponent("Hello, I would like to place an order.")}`}
                 target="_blank"
@@ -111,9 +111,9 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#A89A8C]">
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#A89A8C]">
           <p>
-            © {new Date().getFullYear()} Café Jaipur. Behind The Coronation, Airport Rd, Jaipur.
+            © {new Date().getFullYear()} Coffee N Cue. Behind The Coronation, Airport Rd, Jaipur.
           </p>
 
           <button

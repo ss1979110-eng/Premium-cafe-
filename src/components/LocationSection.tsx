@@ -5,7 +5,7 @@ import { BUSINESS_INFO } from '../data/menu';
 
 export const LocationSection: React.FC = () => {
   return (
-    <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#050504] relative">
+    <section id="contact" className="py-10 sm:py-14 px-4 sm:px-6 lg:px-8 bg-[#050504] relative">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
           {/* Left Column: Factual Location & Details */}

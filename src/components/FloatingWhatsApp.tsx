@@ -15,7 +15,7 @@ export const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ onOpenCart, 
     if (hasItemsInCart) {
       onOpenCart();
     } else {
-      const msg = encodeURIComponent("Hello, I would like to place an order with Café Jaipur.");
+      const msg = encodeURIComponent("Hello, I would like to place an order with Coffee N Cue.");
       window.open(`https://wa.me/91${BUSINESS_INFO.phoneRaw}?text=${msg}`, '_blank');
     }
   };

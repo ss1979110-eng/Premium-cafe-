@@ -24,7 +24,7 @@ export const GalleryLightbox: React.FC = () => {
   };
 
   return (
-    <section id="gallery" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#050504] relative">
+    <section id="gallery" className="py-10 sm:py-14 px-4 sm:px-6 lg:px-8 bg-[#050504] relative">
       {/* Background Ambience */}
       <div className="absolute inset-0 bg-chai-glow pointer-events-none opacity-40" />
 
@@ -35,7 +35,7 @@ export const GalleryLightbox: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center max-w-3xl mx-auto mb-16 space-y-3"
+          className="text-center max-w-3xl mx-auto mb-8 sm:mb-10 space-y-2"
         >
           <span className="text-xs uppercase tracking-widest text-[#A89A8C] font-semibold">
             Visual Ambiance & Culinary Craft

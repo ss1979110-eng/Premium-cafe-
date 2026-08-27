@@ -27,11 +27,11 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
 
   const generateWhatsAppUrl = () => {
     if (items.length === 0) {
-      const defaultMsg = encodeURIComponent("Hello, I would like to place an order with Café Jaipur.");
+      const defaultMsg = encodeURIComponent("Hello, I would like to place an order with Coffee N Cue.");
       return `https://wa.me/91${BUSINESS_INFO.phoneRaw}?text=${defaultMsg}`;
     }
 
-    let message = `*☕ NEW ORDER - CAFÉ JAIPUR*\n`;
+    let message = `*☕ NEW ORDER - COFFEE N CUE*\n`;
     message += `────────────────────────────\n`;
     items.forEach((cartItem, index) => {
       const lineTotal = (cartItem.item.price * cartItem.quantity).toFixed(2);
@@ -41,7 +41,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
     message += `*Total Amount:* ₹${subtotal.toFixed(2)}\n`;
     message += `*Total Items:* ${totalItemsCount}\n\n`;
     message += `*Delivery / Pickup Location:* ${BUSINESS_INFO.location}\n`;
-    message += `\nHello, I would like to place this order with Café Jaipur. Please confirm preparation time.`;
+    message += `\nHello, I would like to place this order with Coffee N Cue. Please confirm preparation time.`;
 
     return `https://wa.me/91${BUSINESS_INFO.phoneRaw}?text=${encodeURIComponent(message)}`;
   };

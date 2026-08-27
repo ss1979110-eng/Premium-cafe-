@@ -125,7 +125,7 @@ export default function App() {
       {/* 2. CINEMATIC 3D HERO SECTION - MATCHING REFERENCE IMAGE */}
       <section
         id="hero"
-        className="relative min-h-screen flex flex-col justify-between pt-20 pb-12 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#050504]"
+        className="relative min-h-screen flex flex-col justify-between pt-16 pb-6 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#050504]"
       >
         {/* Fullscreen 3D WebGL Canvas with flying 3D Cutting Chai, Cold Frappe & floating coffee beans */}
         <Hero3DCanvas brightnessPreset={brightnessPreset} />
@@ -193,7 +193,7 @@ export default function App() {
         </div>
 
         {/* Top Hero Brand Header (Matching exact typography from uploaded image) */}
-        <div className="relative z-10 w-full max-w-4xl mx-auto text-center pointer-events-auto my-auto pt-2 pb-6">
+        <div className="relative z-10 w-full max-w-4xl mx-auto text-center pointer-events-auto my-auto pt-1 pb-4">
           <motion.div
             initial={{ opacity: 0, y: -25 }}
             animate={{ opacity: 1, y: 0 }}
@@ -210,15 +210,15 @@ export default function App() {
               N
             </span>
 
-            {/* QUE */}
+            {/* CUE */}
             <h2 className="font-heading font-black text-5xl sm:text-7xl md:text-8xl lg:text-9xl tracking-[0.18em] uppercase text-transparent bg-clip-text bg-gradient-to-b from-[#d9944d] via-[#b36c2e] to-[#6e3711] drop-shadow-[0_10px_30px_rgba(0,0,0,0.95)] leading-none filter drop-shadow-[0_2px_4px_rgba(255,200,140,0.25)]">
-              QUE
+              CUE
             </h2>
           </motion.div>
         </div>
 
         {/* Bottom Area: EXPLORE MENU Button & Professional Cafe Details */}
-        <div className="relative z-10 w-full max-w-3xl mx-auto text-center space-y-5 pointer-events-auto pb-4">
+        <div className="relative z-10 w-full max-w-3xl mx-auto text-center space-y-4 pointer-events-auto pb-3">
           {/* Prominent EXPLORE MENU Button (Matching User Image) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -237,12 +237,12 @@ export default function App() {
             </motion.a>
           </motion.div>
 
-          {/* Professional, Eloquent Cafe Details (In place of user's notes) */}
+          {/* Professional, Eloquent Cafe Details */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.45 }}
-            className="space-y-3 px-2"
+            className="space-y-2.5 px-2"
           >
             <p className="text-xs sm:text-sm md:text-base font-semibold text-[#E8D8C3] tracking-wide uppercase">
               Artisanal Brews • Royal Indian Chai • Wood-Fired Delicacies • Handcrafted Shakes
@@ -253,7 +253,7 @@ export default function App() {
             </p>
 
             {/* Quick Informational Badges */}
-            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 pt-1 text-[10px] sm:text-[11px] text-[#C4B3A3]">
+            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 pt-0.5 text-[10px] sm:text-[11px] text-[#C4B3A3]">
               <span className="px-3 py-1 rounded-full bg-[#1A100B]/90 border border-[#3A2117] flex items-center gap-1.5 shadow-md">
                 📍 Behind The Coronation, Airport Rd (Near Subodh Girls College)
               </span>
@@ -278,20 +278,20 @@ export default function App() {
       </section>
 
       {/* 3. BRAND INTRODUCTION / ABOUT SECTION */}
-      <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#050504] via-[#241510]/50 to-[#050504] border-y border-[#3A2117]/50 relative">
+      <section id="about" className="py-10 sm:py-14 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#050504] via-[#241510]/50 to-[#050504] border-y border-[#3A2117]/50 relative">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             {/* Left: Content Description */}
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              className="lg:col-span-6 space-y-6"
+              className="lg:col-span-6 space-y-5"
             >
               <div className="space-y-2">
                 <span className="text-xs uppercase tracking-widest text-[#E8D8C3] font-bold">
-                  About Café Jaipur
+                  About Coffee N Cue
                 </span>
                 <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-[#F5F2EC] leading-tight">
                   Chai Culture Meets Modern Café Craft
@@ -302,7 +302,7 @@ export default function App() {
                 Located behind The Coronation on Prabhudayal Marg near SS Jain Subodh Girls College, we serve freshly prepared sips and savoury delights crafted with care.
               </p>
 
-              <div className="grid grid-cols-2 gap-4 pt-2">
+              <div className="grid grid-cols-2 gap-4 pt-1">
                 <motion.div
                   whileHover={{ y: -4 }}
                   className="p-4 rounded-xl bg-[#241510] border border-[#3A2117]"
@@ -324,7 +324,7 @@ export default function App() {
                 </motion.div>
               </div>
 
-              <div className="pt-2 flex items-center gap-4">
+              <div className="pt-1 flex items-center gap-4">
                 <motion.a
                   whileHover={{ scale: 1.04 }}
                   whileTap={{ scale: 0.96 }}
@@ -348,15 +348,15 @@ export default function App() {
               <div className="relative rounded-2xl overflow-hidden border border-[#0B3024] shadow-2xl bg-[#241510] group">
                 <img
                   src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=80"
-                  alt="Café Jaipur Ambiance"
-                  className="w-full h-[400px] object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                  alt="Coffee N Cue Ambiance"
+                  className="w-full h-[360px] object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050504] via-transparent to-transparent opacity-80" />
 
                 <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-[#050504]/90 border border-[#3A2117] backdrop-blur-md flex items-center justify-between">
                   <div>
                     <span className="text-[10px] uppercase font-bold tracking-widest text-[#E8D8C3]">
-                      Jaipur Café Experience
+                      Coffee N Cue Experience
                     </span>
                     <h3 className="font-heading text-sm font-bold text-[#F5F2EC]">
                       Prabhudayal Marg, Airport Rd
@@ -376,11 +376,11 @@ export default function App() {
       </section>
 
       {/* 4. CHAI 3D CINEMATIC SECTION */}
-      <section id="chai" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#050504] relative overflow-hidden border-b border-[#241510]">
+      <section id="chai" className="py-10 sm:py-14 px-4 sm:px-6 lg:px-8 bg-[#050504] relative overflow-hidden border-b border-[#241510]">
         <div className="absolute inset-0 bg-chai-glow pointer-events-none opacity-60" />
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             {/* 3D Chai Scene Canvas (Left) */}
             <motion.div
               initial={{ opacity: 0, scale: 0.92 }}
@@ -406,9 +406,9 @@ export default function App() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              className="lg:col-span-6 order-1 lg:order-2 space-y-6"
+              className="lg:col-span-6 order-1 lg:order-2 space-y-5"
             >
-              <div className="space-y-3">
+              <div className="space-y-2.5">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#241510] border border-[#0B3024] text-[11px] font-bold text-[#E8D8C3] uppercase tracking-widest">
                   <Flame className="w-3 h-3 text-[#0B3024]" />
                   <span>Indian Chai Culture</span>
@@ -422,7 +422,7 @@ export default function App() {
               </div>
 
               {/* Tea Menu Items Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
                 {teaItems.map((item) => (
                   <motion.div
                     key={item.id}
@@ -454,20 +454,20 @@ export default function App() {
       </section>
 
       {/* 5. COFFEE 3D CINEMATIC SECTION */}
-      <section id="coffee" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#050504] relative overflow-hidden border-b border-[#241510]">
+      <section id="coffee" className="py-10 sm:py-14 px-4 sm:px-6 lg:px-8 bg-[#050504] relative overflow-hidden border-b border-[#241510]">
         <div className="absolute inset-0 bg-coffee-glow pointer-events-none opacity-60" />
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             {/* Coffee Content & Menu List (Left) */}
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              className="lg:col-span-6 space-y-6"
+              className="lg:col-span-6 space-y-5"
             >
-              <div className="space-y-3">
+              <div className="space-y-2.5">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#241510] border border-[#0B3024] text-[11px] font-bold text-[#E8D8C3] uppercase tracking-widest">
                   <Coffee className="w-3 h-3 text-[#0B3024]" />
                   <span>Artisanal Coffee Bar</span>
@@ -481,7 +481,7 @@ export default function App() {
               </div>
 
               {/* Coffee Menu Items Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
                 {coffeeItems.map((item) => (
                   <motion.div
                     key={item.id}
@@ -521,7 +521,7 @@ export default function App() {
                 <img
                   src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1000&q=80"
                   alt="Freshly Roasted Coffee & Latte Art"
-                  className="w-full h-[380px] object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-[360px] object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050504] via-[#050504]/30 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-[#050504]/90 border border-[#3A2117] backdrop-blur-md flex items-center justify-between">
@@ -548,14 +548,14 @@ export default function App() {
       </section>
 
       {/* 6. CHINESE FOOD CINEMATIC SECTION */}
-      <section id="chinese" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#050504] relative border-b border-[#241510]">
-        <div className="max-w-7xl mx-auto space-y-12">
+      <section id="chinese" className="py-10 sm:py-14 px-4 sm:px-6 lg:px-8 bg-[#050504] relative border-b border-[#241510]">
+        <div className="max-w-7xl mx-auto space-y-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="text-center max-w-3xl mx-auto space-y-3"
+            className="text-center max-w-3xl mx-auto space-y-2"
           >
             <span className="text-xs uppercase tracking-widest text-[#E8D8C3] font-bold">
               Wok-Tossed & Steamed Delicacies
@@ -579,7 +579,7 @@ export default function App() {
               whileHover={{ y: -6 }}
               className="rounded-2xl overflow-hidden bg-[#241510] border border-[#3A2117] hover:border-[#0B3024] transition-all group flex flex-col justify-between"
             >
-              <div className="relative h-64 overflow-hidden">
+              <div className="relative h-56 sm:h-64 overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=800&q=80"
                   alt="Steam Momos"
@@ -590,7 +590,7 @@ export default function App() {
                   Steam • Fried • Chilli
                 </span>
               </div>
-              <div className="p-6 space-y-3">
+              <div className="p-5 sm:p-6 space-y-3">
                 <h3 className="font-heading text-xl font-bold text-[#F5F2EC]">
                   Artisanal Momos
                 </h3>
@@ -620,7 +620,7 @@ export default function App() {
               whileHover={{ y: -6 }}
               className="rounded-2xl overflow-hidden bg-[#241510] border border-[#3A2117] hover:border-[#0B3024] transition-all group flex flex-col justify-between"
             >
-              <div className="relative h-64 overflow-hidden">
+              <div className="relative h-56 sm:h-64 overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=800&q=80"
                   alt="Hakka Noodles"
@@ -631,7 +631,7 @@ export default function App() {
                   Veg • Hakka • Schezwan
                 </span>
               </div>
-              <div className="p-6 space-y-3">
+              <div className="p-5 sm:p-6 space-y-3">
                 <h3 className="font-heading text-xl font-bold text-[#F5F2EC]">
                   Wok-Tossed Noodles
                 </h3>
@@ -661,7 +661,7 @@ export default function App() {
               whileHover={{ y: -6 }}
               className="rounded-2xl overflow-hidden bg-[#241510] border border-[#3A2117] hover:border-[#0B3024] transition-all group flex flex-col justify-between"
             >
-              <div className="relative h-64 overflow-hidden">
+              <div className="relative h-56 sm:h-64 overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=800&q=80"
                   alt="Chilli Paneer"
@@ -672,7 +672,7 @@ export default function App() {
                   Chilli Paneer • Manchurian
                 </span>
               </div>
-              <div className="p-6 space-y-3">
+              <div className="p-5 sm:p-6 space-y-3">
                 <h3 className="font-heading text-xl font-bold text-[#F5F2EC]">
                   Paneer & Crispy Appetizers
                 </h3>
@@ -697,9 +697,9 @@ export default function App() {
       </section>
 
       {/* 7. SHAKES & MOCKTAILS EXPERIENCE */}
-      <section id="drinks" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#050504] relative border-b border-[#241510]">
+      <section id="drinks" className="py-10 sm:py-14 px-4 sm:px-6 lg:px-8 bg-[#050504] relative border-b border-[#241510]">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             {/* Left: Artisanal Shakes & Coolers Photography */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -712,7 +712,7 @@ export default function App() {
                 <img
                   src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=1000&q=80"
                   alt="Refreshing Mocktails and Milkshakes"
-                  className="w-full h-[380px] object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-[360px] object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050504] via-[#050504]/30 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-[#050504]/90 border border-[#3A2117] backdrop-blur-md flex items-center justify-between">
@@ -741,9 +741,9 @@ export default function App() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              className="lg:col-span-6 space-y-6"
+              className="lg:col-span-6 space-y-5"
             >
-              <div className="space-y-3">
+              <div className="space-y-2.5">
                 <span className="text-xs uppercase tracking-widest text-[#E8D8C3] font-bold">
                   Thick Shakes & Sparkling Coolers
                 </span>
@@ -772,7 +772,7 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="pt-2 flex gap-3">
+              <div className="pt-1 flex gap-3">
                 <motion.a
                   whileHover={{ scale: 1.04 }}
                   whileTap={{ scale: 0.96 }}
@@ -798,14 +798,14 @@ export default function App() {
       </section>
 
       {/* 8. WHY CHOOSE US */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#050504] relative border-b border-[#241510]">
+      <section className="py-10 sm:py-12 px-4 sm:px-6 lg:px-8 bg-[#050504] relative border-b border-[#241510]">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="text-center max-w-2xl mx-auto mb-14 space-y-2"
+            className="text-center max-w-2xl mx-auto mb-8 space-y-2"
           >
             <span className="text-xs uppercase tracking-widest text-[#E8D8C3] font-bold">
               The Café Experience
@@ -823,7 +823,7 @@ export default function App() {
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.5, delay: 0.1 }}
               whileHover={{ y: -6 }}
-              className="p-6 rounded-2xl bg-gradient-to-b from-[#241510] to-[#050504] border border-[#3A2117] space-y-3 hover:border-[#0B3024] transition-colors"
+              className="p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-[#241510] to-[#050504] border border-[#3A2117] space-y-3 hover:border-[#0B3024] transition-colors"
             >
               <div className="w-12 h-12 rounded-xl bg-[#0B3024] border border-[#123F2E] flex items-center justify-center text-[#E8D8C3]">
                 <Flame className="w-6 h-6" />
@@ -843,7 +843,7 @@ export default function App() {
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.5, delay: 0.2 }}
               whileHover={{ y: -6 }}
-              className="p-6 rounded-2xl bg-gradient-to-b from-[#241510] to-[#050504] border border-[#3A2117] space-y-3 hover:border-[#0B3024] transition-colors"
+              className="p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-[#241510] to-[#050504] border border-[#3A2117] space-y-3 hover:border-[#0B3024] transition-colors"
             >
               <div className="w-12 h-12 rounded-xl bg-[#0B3024] border border-[#123F2E] flex items-center justify-center text-[#E8D8C3]">
                 <UtensilsCrossed className="w-6 h-6" />
@@ -863,7 +863,7 @@ export default function App() {
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.5, delay: 0.3 }}
               whileHover={{ y: -6 }}
-              className="p-6 rounded-2xl bg-gradient-to-b from-[#241510] to-[#050504] border border-[#3A2117] space-y-3 hover:border-[#0B3024] transition-colors"
+              className="p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-[#241510] to-[#050504] border border-[#3A2117] space-y-3 hover:border-[#0B3024] transition-colors"
             >
               <div className="w-12 h-12 rounded-xl bg-[#0B3024] border border-[#123F2E] flex items-center justify-center text-[#E8D8C3]">
                 <Sparkles className="w-6 h-6" />
@@ -883,7 +883,7 @@ export default function App() {
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.5, delay: 0.4 }}
               whileHover={{ y: -6 }}
-              className="p-6 rounded-2xl bg-gradient-to-b from-[#241510] to-[#050504] border border-[#3A2117] space-y-3 hover:border-[#0B3024] transition-colors"
+              className="p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-[#241510] to-[#050504] border border-[#3A2117] space-y-3 hover:border-[#0B3024] transition-colors"
             >
               <div className="w-12 h-12 rounded-xl bg-[#0B3024] border border-[#123F2E] flex items-center justify-center text-[#E8D8C3]">
                 <HeartHandshake className="w-6 h-6" />
@@ -900,15 +900,15 @@ export default function App() {
       </section>
 
       {/* 9. MAIN INTERACTIVE MENU */}
-      <section id="menu" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#050504] relative">
-        <div className="max-w-7xl mx-auto space-y-10">
+      <section id="menu" className="py-10 sm:py-14 px-4 sm:px-6 lg:px-8 bg-[#050504] relative">
+        <div className="max-w-7xl mx-auto space-y-6">
           {/* Menu Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="text-center max-w-3xl mx-auto space-y-3"
+            className="text-center max-w-3xl mx-auto space-y-2"
           >
             <span className="text-xs uppercase tracking-widest text-[#E8D8C3] font-bold">
               Complete Interactive Menu

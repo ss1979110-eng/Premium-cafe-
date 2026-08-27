@@ -61,7 +61,7 @@ export const Navbar: React.FC<NavbarProps> = ({ cartCount, onOpenCart }) => {
             </motion.div>
             <div className="flex flex-col">
               <span className="font-heading text-xl sm:text-2xl font-bold tracking-wider text-[#F5F2EC] group-hover:text-[#E8D8C3] transition-colors">
-                CAFÉ JAIPUR
+                COFFEE N CUE
               </span>
               <span className="text-[10px] tracking-widest uppercase text-[#A89A8C]">
                 Prabhudayal Marg • Airport Rd
@@ -164,7 +164,7 @@ export const Navbar: React.FC<NavbarProps> = ({ cartCount, onOpenCart }) => {
                 <div className="w-10 h-10 rounded-full bg-[#241510] border border-[#0B3024] flex items-center justify-center text-[#E8D8C3]">
                   <Coffee className="w-5 h-5" />
                 </div>
-                <span className="font-heading text-xl font-bold text-[#F5F2EC]">CAFÉ JAIPUR</span>
+                <span className="font-heading text-xl font-bold text-[#F5F2EC]">COFFEE N CUE</span>
               </div>
               <motion.button
                 whileTap={{ scale: 0.9 }}
