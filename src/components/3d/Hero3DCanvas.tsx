@@ -139,20 +139,20 @@ export const Hero3DCanvas: React.FC<Hero3DCanvasProps> = ({
     const mainGroup = new THREE.Group();
     scene.add(mainGroup);
 
-    // 1. Faceted Cutting Chai Glass with Outing Splash (Left side)
+    // 1. Faceted Cutting Chai Glass with Outing Splash (Left side, matching reference image)
     const { group: chaiGroup, splashGroup, splashDroplets } = createCuttingChaiGlassWithSplash();
-    chaiGroup.position.set(-2.0, -1.0, 0.6);
-    chaiGroup.rotation.y = 0.35;
-    chaiGroup.rotation.z = -0.06; // slight dynamic tilt
-    chaiGroup.scale.set(0.92, 0.92, 0.92);
+    chaiGroup.position.set(-1.85, -0.4, 0.4);
+    chaiGroup.rotation.y = 0.45;
+    chaiGroup.rotation.z = -0.12; // tilted dynamic angle like the photo
+    chaiGroup.scale.set(1.02, 1.02, 1.02);
     mainGroup.add(chaiGroup);
 
-    // 2. Frappe Coffee Cup with Chocolate Drizzle and Dome Lid (Right side)
+    // 2. Frappe Coffee Cup with Chocolate Drizzle and Dome Lid (Right side, matching reference image)
     const coffeeGroup = createFrappeCoffeeCup();
-    coffeeGroup.position.set(2.0, -1.2, -0.1);
-    coffeeGroup.rotation.y = -0.45;
-    coffeeGroup.rotation.z = 0.05;
-    coffeeGroup.scale.set(0.88, 0.88, 0.88);
+    coffeeGroup.position.set(1.85, -0.6, 0.1);
+    coffeeGroup.rotation.y = -0.4;
+    coffeeGroup.rotation.z = 0.08;
+    coffeeGroup.scale.set(0.98, 0.98, 0.98);
     mainGroup.add(coffeeGroup);
 
     // 3. Dynamic Floating Coffee Beans (Background & Midground)
@@ -440,14 +440,14 @@ export const Hero3DCanvas: React.FC<Hero3DCanvasProps> = ({
 
       // Scroll effect: move camera smoothly
       const scrollFactor = Math.min(scrollY / (window.innerHeight || 1), 1.5);
-      camera.position.y = 1.1 - scrollFactor * 0.7 + currentMouseY * 0.25;
-      camera.position.x = currentMouseX * 0.5;
+      camera.position.y = 1.1 - scrollFactor * 0.7 + currentMouseY * 0.2;
+      camera.position.x = currentMouseX * 0.4;
       camera.lookAt(0, 0, 0);
 
-      // 1. Faceted Cutting Chai Glass Dynamic Float & Splash Reaction
-      chaiGroup.rotation.y = 0.35 + Math.sin(elapsedTime * 0.9) * 0.09 + currentMouseX * 0.18;
-      chaiGroup.rotation.z = -0.06 + Math.cos(elapsedTime * 1.1) * 0.04 - currentMouseY * 0.08;
-      chaiGroup.position.y = -1.0 + Math.sin(elapsedTime * 1.3) * 0.07 - scrollFactor * 0.2;
+      // 1. Faceted Cutting Chai Glass Dynamic Float & Splash Reaction (Left side)
+      chaiGroup.rotation.y = 0.45 + Math.sin(elapsedTime * 0.9) * 0.12 + currentMouseX * 0.12;
+      chaiGroup.rotation.z = -0.12 + Math.cos(elapsedTime * 1.1) * 0.05 - currentMouseY * 0.05;
+      chaiGroup.position.y = -0.4 + Math.sin(elapsedTime * 1.3) * 0.08 - scrollFactor * 0.2;
 
       // Dynamic Chai Outing Splash Ripple & Undulation
       splashGroup.rotation.y = Math.sin(elapsedTime * 1.5) * 0.15;
@@ -464,10 +464,11 @@ export const Hero3DCanvas: React.FC<Hero3DCanvasProps> = ({
         drop.rotation.y += 0.03;
       });
 
-      // 2. Frappe Coffee Cup Movement
-      coffeeGroup.rotation.y = -0.45 + Math.cos(elapsedTime * 0.8) * 0.08 - currentMouseX * 0.15;
-      coffeeGroup.position.y = -1.2 + Math.cos(elapsedTime * 1.2) * 0.06 - scrollFactor * 0.2;
-      coffeeGroup.position.z = -0.1 + currentMouseY * 0.15;
+      // 2. Frappe Coffee Cup Movement (Right side)
+      coffeeGroup.rotation.y = -0.4 + Math.cos(elapsedTime * 0.8) * 0.1 - currentMouseX * 0.12;
+      coffeeGroup.rotation.z = 0.08 + Math.sin(elapsedTime * 1.0) * 0.04;
+      coffeeGroup.position.y = -0.6 + Math.cos(elapsedTime * 1.2) * 0.08 - scrollFactor * 0.2;
+      coffeeGroup.position.z = 0.1 + currentMouseY * 0.1;
 
       // 3. Moving Coffee Beans (Tumbling, rotating, floating across depths)
       beans.forEach((b, idx) => {

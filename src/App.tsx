@@ -18,8 +18,6 @@ import {
 import { motion, AnimatePresence } from 'motion/react';
 import { Hero3DCanvas } from './components/3d/Hero3DCanvas';
 import { Chai3DScene } from './components/3d/Chai3DScene';
-import { Coffee3DScene } from './components/3d/Coffee3DScene';
-import { Drink3DScene } from './components/3d/Drink3DScene';
 import { Navbar } from './components/Navbar';
 import { ProductCard } from './components/ProductCard';
 import { CartDrawer } from './components/CartDrawer';
@@ -124,166 +122,158 @@ export default function App() {
         onOpenCart={() => setIsCartOpen(true)}
       />
 
-      {/* 2. CINEMATIC 3D HERO SECTION */}
+      {/* 2. CINEMATIC 3D HERO SECTION - MATCHING REFERENCE IMAGE */}
       <section
         id="hero"
-        className="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#050504]"
+        className="relative min-h-screen flex flex-col justify-between pt-20 pb-12 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#050504]"
       >
-        {/* Fullscreen 3D WebGL Canvas with dynamic cutting chai splash & floating particles */}
+        {/* Fullscreen 3D WebGL Canvas with flying 3D Cutting Chai, Cold Frappe & floating coffee beans */}
         <Hero3DCanvas brightnessPreset={brightnessPreset} />
 
         {/* Ambient Dark Vignette & Glow Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#050504]/50 via-transparent to-[#050504] pointer-events-none z-1" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#050504]/70 via-transparent to-[#050504]/90 pointer-events-none z-1" />
         <div className="absolute inset-0 bg-vignette opacity-80 pointer-events-none z-1" />
 
-        {/* Scene Lighting / Ambiance Selector Floating Pill */}
-        <div className="absolute top-28 right-4 sm:right-8 z-20 hidden md:flex items-center gap-1 p-1 bg-[#140e0b]/80 border border-[#3A2117]/80 rounded-full backdrop-blur-md shadow-2xl">
-          <span className="text-[10px] uppercase font-bold tracking-wider text-[#A89A8C] px-2.5">
-            Lighting:
-          </span>
-          <button
-            type="button"
-            onClick={() => setBrightnessPreset('vibrant')}
-            className={`flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold transition-all cursor-pointer ${
-              brightnessPreset === 'vibrant'
-                ? 'bg-[#E8D8C3] text-[#140E0B] shadow-md shadow-[#E8D8C3]/20 font-bold'
-                : 'text-[#A89A8C] hover:text-[#E8D8C3]'
-            }`}
-            title="Vibrant & Bright Golden Glow"
-          >
-            <Sun className="w-3 h-3" />
-            <span>Vibrant</span>
-          </button>
-          <button
-            type="button"
-            onClick={() => setBrightnessPreset('balanced')}
-            className={`flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold transition-all cursor-pointer ${
-              brightnessPreset === 'balanced'
-                ? 'bg-[#0B3024] text-[#E8D8C3] border border-[#123F2E] shadow-md shadow-[#0B3024]/40 font-bold'
-                : 'text-[#A89A8C] hover:text-[#E8D8C3]'
-            }`}
-            title="Balanced Luxury Ambiance"
-          >
-            <Zap className="w-3 h-3" />
-            <span>Balanced</span>
-          </button>
-          <button
-            type="button"
-            onClick={() => setBrightnessPreset('moody')}
-            className={`flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold transition-all cursor-pointer ${
-              brightnessPreset === 'moody'
-                ? 'bg-[#3A2117] text-[#E8D8C3] shadow-md shadow-[#3A2117]/40 font-bold'
-                : 'text-[#A89A8C] hover:text-[#E8D8C3]'
-            }`}
-            title="Moody & Cinematic Roast"
-          >
-            <Moon className="w-3 h-3" />
-            <span>Moody</span>
-          </button>
+        {/* Top Floating Bar: Brand Status & Next Navigation Button */}
+        <div className="relative z-20 w-full max-w-7xl mx-auto flex items-center justify-between pointer-events-auto pt-2">
+          {/* Subtle live ambiance status badge */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#140e0b]/80 border border-[#3A2117] backdrop-blur-md text-[11px] font-semibold text-[#E8D8C3] uppercase tracking-wider shadow-lg">
+            <span className="w-2 h-2 rounded-full bg-[#0B3024] animate-ping" />
+            <span className="hidden sm:inline">3D Flying Coffee & Chai Scene</span>
+            <span className="sm:hidden">Live 3D Brew</span>
+          </div>
+
+          {/* Reference Image "Next >" Quick Explore Button */}
+          <div className="flex items-center gap-3">
+            {/* Lighting presets toggle (Compact) */}
+            <div className="hidden md:flex items-center gap-1 p-1 bg-[#140e0b]/80 border border-[#3A2117]/80 rounded-full backdrop-blur-md">
+              <button
+                type="button"
+                onClick={() => setBrightnessPreset('vibrant')}
+                className={`p-1.5 rounded-full text-xs transition-all cursor-pointer ${
+                  brightnessPreset === 'vibrant' ? 'bg-[#E8D8C3] text-[#140E0B]' : 'text-[#A89A8C]'
+                }`}
+                title="Vibrant Lighting"
+              >
+                <Sun className="w-3.5 h-3.5" />
+              </button>
+              <button
+                type="button"
+                onClick={() => setBrightnessPreset('balanced')}
+                className={`p-1.5 rounded-full text-xs transition-all cursor-pointer ${
+                  brightnessPreset === 'balanced' ? 'bg-[#0B3024] text-[#E8D8C3]' : 'text-[#A89A8C]'
+                }`}
+                title="Balanced Lighting"
+              >
+                <Zap className="w-3.5 h-3.5" />
+              </button>
+              <button
+                type="button"
+                onClick={() => setBrightnessPreset('moody')}
+                className={`p-1.5 rounded-full text-xs transition-all cursor-pointer ${
+                  brightnessPreset === 'moody' ? 'bg-[#3A2117] text-[#E8D8C3]' : 'text-[#A89A8C]'
+                }`}
+                title="Moody Lighting"
+              >
+                <Moon className="w-3.5 h-3.5" />
+              </button>
+            </div>
+
+            {/* "Next >" Pill Button Matching User Image */}
+            <motion.a
+              whileHover={{ scale: 1.05, x: 2 }}
+              whileTap={{ scale: 0.95 }}
+              href="#menu"
+              className="flex items-center gap-1.5 px-5 py-2 rounded-full bg-white hover:bg-[#E8D8C3] text-[#050504] font-black text-xs sm:text-sm uppercase tracking-wider transition-all shadow-xl shadow-black/60 cursor-pointer border border-white/90"
+            >
+              <span>Next</span>
+              <ArrowRight className="w-4 h-4 stroke-[3]" />
+            </motion.a>
+          </div>
         </div>
 
-        {/* Hero Content */}
-        <div className="relative z-10 max-w-5xl mx-auto text-center space-y-8 pointer-events-auto mt-6 sm:mt-0">
-          {/* Subtle Location Tag */}
+        {/* Top Hero Brand Header (Matching exact typography from uploaded image) */}
+        <div className="relative z-10 w-full max-w-4xl mx-auto text-center pointer-events-auto my-auto pt-2 pb-6">
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -25 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#241510]/80 border border-[#0B3024] backdrop-blur-md text-xs font-semibold tracking-wider text-[#E8D8C3] uppercase shadow-lg"
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="flex flex-col items-center justify-center select-none"
           >
-            <span className="w-2 h-2 rounded-full bg-[#123F2E] animate-pulse" />
-            <span>Behind The Coronation • Airport Rd, Jaipur</span>
-          </motion.div>
-
-          {/* Main Hero Headline */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="space-y-4"
-          >
-            <h1 className="font-heading text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-[#F5F2EC] leading-[1.1] max-w-4xl mx-auto">
-              GOOD FOOD. <br className="hidden sm:block" />
-              <span className="text-[#E8D8C3] drop-shadow-[0_4px_16px_rgba(232,216,195,0.2)]">
-                GREAT SIPS.
-              </span>{' '}
-              <br className="hidden sm:block" />
-              BETTER MOMENTS.
+            {/* COFFEE */}
+            <h1 className="font-heading font-black text-5xl sm:text-7xl md:text-8xl lg:text-9xl tracking-[0.14em] uppercase text-transparent bg-clip-text bg-gradient-to-b from-[#d9944d] via-[#b36c2e] to-[#7a3e14] drop-shadow-[0_10px_30px_rgba(0,0,0,0.95)] leading-none filter drop-shadow-[0_2px_4px_rgba(255,200,140,0.25)]">
+              COFFEE
             </h1>
 
-            {/* Supporting Text */}
-            <p className="text-base sm:text-lg md:text-xl font-serif-luxury italic text-[#E8D8C3]/90 tracking-wide">
-              {BUSINESS_INFO.heroTagline}
-            </p>
+            {/* N */}
+            <span className="font-heading font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#d48b3c] my-0.5 sm:my-1 tracking-widest drop-shadow-[0_6px_20px_rgba(0,0,0,0.9)]">
+              N
+            </span>
+
+            {/* QUE */}
+            <h2 className="font-heading font-black text-5xl sm:text-7xl md:text-8xl lg:text-9xl tracking-[0.18em] uppercase text-transparent bg-clip-text bg-gradient-to-b from-[#d9944d] via-[#b36c2e] to-[#6e3711] drop-shadow-[0_10px_30px_rgba(0,0,0,0.95)] leading-none filter drop-shadow-[0_2px_4px_rgba(255,200,140,0.25)]">
+              QUE
+            </h2>
           </motion.div>
+        </div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.5 }}
-            className="text-xs sm:text-sm text-[#A89A8C] max-w-2xl mx-auto leading-relaxed"
-          >
-            Welcome to Jaipur’s interactive 3D café destination. Indulge in authentic kadak chai, freshly roasted coffee, crispy momos, spicy noodles, thick shakes, and sparkling mocktails.
-          </motion.p>
-
-          {/* Action Buttons */}
+        {/* Bottom Area: EXPLORE MENU Button & Professional Cafe Details */}
+        <div className="relative z-10 w-full max-w-3xl mx-auto text-center space-y-5 pointer-events-auto pb-4">
+          {/* Prominent EXPLORE MENU Button (Matching User Image) */}
           <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.65 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="flex items-center justify-center"
           >
-            {/* Primary Button: Dark Green + Cream Text */}
             <motion.a
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               id="hero-explore-menu-btn"
               href="#menu"
-              className="w-full sm:w-auto px-8 py-4 rounded-xl bg-[#0B3024] hover:bg-[#123F2E] text-[#E8D8C3] border border-[#123F2E] hover:border-[#E8D8C3]/50 text-xs sm:text-sm font-bold uppercase tracking-widest transition-colors shadow-xl shadow-[#0B3024]/40 flex items-center justify-center gap-2 cursor-pointer"
+              className="inline-block px-10 sm:px-16 py-3.5 sm:py-4 rounded-2xl bg-white hover:bg-[#F5EAD9] text-[#050504] text-xl sm:text-2xl md:text-3xl font-black uppercase tracking-[0.16em] transition-all shadow-[0_15px_45px_rgba(0,0,0,0.85)] border-2 border-white/90 cursor-pointer"
             >
-              <span>EXPLORE MENU</span>
-              <ArrowRight className="w-4 h-4" />
+              EXPLORE MENU
             </motion.a>
-
-            {/* Secondary Button: Transparent Black + Cream Border */}
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              id="hero-order-now-btn"
-              onClick={() => setIsCartOpen(true)}
-              className="w-full sm:w-auto px-8 py-4 rounded-xl bg-[#050504]/70 hover:bg-[#241510] text-[#E8D8C3] border border-[#E8D8C3]/60 hover:border-[#E8D8C3] text-xs sm:text-sm font-bold uppercase tracking-widest transition-colors backdrop-blur-md flex items-center justify-center gap-2 cursor-pointer"
-            >
-              <ShoppingBag className="w-4 h-4" />
-              <span>ORDER NOW</span>
-            </motion.button>
           </motion.div>
 
-          {/* Direct Phone / WhatsApp Quick Access */}
+          {/* Professional, Eloquent Cafe Details (In place of user's notes) */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="pt-6 flex flex-wrap items-center justify-center gap-6 text-xs text-[#A89A8C]"
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.45 }}
+            className="space-y-3 px-2"
           >
-            <a
-              href={`tel:${BUSINESS_INFO.phoneRaw}`}
-              className="flex items-center gap-2 hover:text-[#E8D8C3] transition-colors"
-            >
-              <Phone className="w-3.5 h-3.5 text-[#0B3024]" />
-              <span>Call: {BUSINESS_INFO.phone}</span>
-            </a>
-            <span className="hidden sm:inline text-[#3A2117]">•</span>
-            <span className="flex items-center gap-1.5 text-[#E8D8C3]">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#0B3024]" />
-              <span>Near SS Jain Subodh Girls College</span>
-            </span>
+            <p className="text-xs sm:text-sm md:text-base font-semibold text-[#E8D8C3] tracking-wide uppercase">
+              Artisanal Brews • Royal Indian Chai • Wood-Fired Delicacies • Handcrafted Shakes
+            </p>
+
+            <p className="text-[11px] sm:text-xs text-[#A89A8C] leading-relaxed max-w-2xl mx-auto">
+              Crafted with heartfelt passion, freshly ground single-origin Arabica beans, and hand-crushed whole spices. Step in for authentic flavours, soothing sips, and a warm, modern café experience in Jaipur.
+            </p>
+
+            {/* Quick Informational Badges */}
+            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 pt-1 text-[10px] sm:text-[11px] text-[#C4B3A3]">
+              <span className="px-3 py-1 rounded-full bg-[#1A100B]/90 border border-[#3A2117] flex items-center gap-1.5 shadow-md">
+                📍 Behind The Coronation, Airport Rd (Near Subodh Girls College)
+              </span>
+              <span className="px-3 py-1 rounded-full bg-[#1A100B]/90 border border-[#3A2117] flex items-center gap-1.5 shadow-md">
+                ⏰ Open Daily: 10:00 AM – 11:00 PM
+              </span>
+              <a
+                href={`tel:${BUSINESS_INFO.phoneRaw}`}
+                className="px-3 py-1 rounded-full bg-[#0B3024]/90 border border-[#123F2E] text-[#E8D8C3] font-semibold flex items-center gap-1.5 hover:bg-[#123F2E] transition-colors shadow-md"
+              >
+                <Phone className="w-3 h-3 text-[#E8D8C3]" />
+                <span>Call: {BUSINESS_INFO.phone}</span>
+              </a>
+            </div>
           </motion.div>
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-[#A89A8C] pointer-events-none opacity-60">
-          <span className="text-[10px] uppercase tracking-widest font-semibold">Scroll to explore</span>
-          <ChevronDown className="w-4 h-4 animate-bounce text-[#E8D8C3]" />
+        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex flex-col items-center gap-0.5 text-[#A89A8C] pointer-events-none opacity-50">
+          <ChevronDown className="w-3.5 h-3.5 animate-bounce text-[#E8D8C3]" />
         </div>
       </section>
 
@@ -519,21 +509,37 @@ export default function App() {
               </div>
             </motion.div>
 
-            {/* 3D Coffee Scene Canvas (Right) */}
+            {/* Artisanal Coffee Photography Showcase (Right) */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.92 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
               className="lg:col-span-6 flex flex-col items-center justify-center"
             >
-              <div className="w-full max-w-lg rounded-2xl bg-gradient-to-b from-[#241510]/80 via-[#050504] to-[#050504] border border-[#3A2117] p-2 relative shadow-2xl">
-                <Coffee3DScene />
-                <div className="text-center pb-3">
-                  <span className="text-[11px] uppercase tracking-widest text-[#A89A8C] font-semibold flex items-center justify-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#E8D8C3] animate-ping inline-block" />
-                    <span>Live 3D Coffee Bar — Continuous Roast Rotation & Floating Beans</span>
-                  </span>
+              <div className="w-full max-w-lg rounded-2xl overflow-hidden bg-[#241510] border border-[#3A2117] shadow-2xl relative group">
+                <img
+                  src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1000&q=80"
+                  alt="Freshly Roasted Coffee & Latte Art"
+                  className="w-full h-[380px] object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050504] via-[#050504]/30 to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-[#050504]/90 border border-[#3A2117] backdrop-blur-md flex items-center justify-between">
+                  <div>
+                    <span className="text-[10px] uppercase font-bold tracking-widest text-[#E8D8C3]">
+                      Fresh Arabica Roast
+                    </span>
+                    <h4 className="font-heading text-base font-bold text-[#F5F2EC]">
+                      Hand-Pulled Espresso & Blends
+                    </h4>
+                  </div>
+                  <a
+                    href="#menu"
+                    onClick={() => setSelectedCategory('COFFEE')}
+                    className="px-3.5 py-1.5 rounded-lg bg-[#0B3024] hover:bg-[#123F2E] text-[#E8D8C3] text-xs font-bold uppercase tracking-wider transition-colors"
+                  >
+                    View Menu
+                  </a>
                 </div>
               </div>
             </motion.div>
@@ -690,24 +696,41 @@ export default function App() {
         </div>
       </section>
 
-      {/* 7. SHAKES & MOCKTAILS 3D DRINK EXPERIENCE */}
+      {/* 7. SHAKES & MOCKTAILS EXPERIENCE */}
       <section id="drinks" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#050504] relative border-b border-[#241510]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Left: 3D Drink Canvas */}
+            {/* Left: Artisanal Shakes & Coolers Photography */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.92 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
               className="lg:col-span-6 flex flex-col items-center justify-center"
             >
-              <div className="w-full max-w-lg rounded-2xl bg-gradient-to-b from-[#241510]/80 via-[#050504] to-[#050504] border border-[#3A2117] p-2 relative shadow-2xl">
-                <Drink3DScene />
-                <div className="text-center pb-3">
-                  <span className="text-[11px] uppercase tracking-widest text-[#A89A8C] font-semibold">
-                    Interactive 3D Mocktail — Floating ice & mint leaves
-                  </span>
+              <div className="w-full max-w-lg rounded-2xl overflow-hidden bg-[#241510] border border-[#3A2117] shadow-2xl relative group">
+                <img
+                  src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=1000&q=80"
+                  alt="Refreshing Mocktails and Milkshakes"
+                  className="w-full h-[380px] object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050504] via-[#050504]/30 to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-[#050504]/90 border border-[#3A2117] backdrop-blur-md flex items-center justify-between">
+                  <div>
+                    <span className="text-[10px] uppercase font-bold tracking-widest text-[#E8D8C3]">
+                      Ice Cold & Refreshing
+                    </span>
+                    <h4 className="font-heading text-base font-bold text-[#F5F2EC]">
+                      Thick Shakes & Sparkling Mojitos
+                    </h4>
+                  </div>
+                  <a
+                    href="#menu"
+                    onClick={() => setSelectedCategory('SHAKE')}
+                    className="px-3.5 py-1.5 rounded-lg bg-[#0B3024] hover:bg-[#123F2E] text-[#E8D8C3] text-xs font-bold uppercase tracking-wider transition-colors"
+                  >
+                    View Menu
+                  </a>
                 </div>
               </div>
             </motion.div>
